@@ -3,6 +3,20 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const error = document.querySelector('.hidden')
+const tik=document.getElementById('tiktok');
+tik.addEventListener('click',()=>{
+  mimicServerCall().then(response=>{
+    console.log(response)
+    tik.innerText=FULL_HEART;
+  }).catch(err=>{
+    console.log(err)
+    error.removeAttribute('.hidden')
+    tik.innerText=EMPTY_HEART;
+  })
+})
+
+
 
 
 
